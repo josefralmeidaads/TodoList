@@ -1,0 +1,51 @@
+.main {
+ display: flex;
+ margin: 0 auto;
+ width: 46rem;
+ flex-direction: column;
+}
+
+.tasksList {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex: 1;
+ margin-bottom: 1.5rem;
+}
+
+.tasksList strong span {
+ background: var(--gray-400);
+ padding: 0.1rem 0.5rem;
+ border-radius: 16px;
+ margin-left: 0.5rem;
+ color: var(--gray-200);
+}
+
+.taskCreate {
+ color: var(--blue-500);
+}
+
+.taskCcompleted {
+ color: var(--purple-500);
+}
+
+.boxEmpty {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.boxEmptyWithBorder {
+ border-radius: 8px;
+ border-top: 1px solid var(--gray-400);
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ padding-top: 4rem;
+}
+
+.boxEmptyWithBorder img {
+ margin-bottom: 1rem;
+}

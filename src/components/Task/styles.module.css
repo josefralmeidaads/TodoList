@@ -1,0 +1,16 @@
+.task {
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-start;
+ margin: 0 auto;
+ margin-bottom: 0.5rem;
+ width: 46rem;
+ background: var(--gray-400);
+ padding: 1rem;
+ border-radius: 8px;
+}
+
+.circle {
+ margin-right: 0.5rem;
+ color: var(--blue-500);
+}
