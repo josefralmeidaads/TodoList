@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from './styles.module.css';
-import { Circle, Trash } from '@phosphor-icons/react';
+import { Check, Trash } from '@phosphor-icons/react';
+import { ITask } from '../../App';
 
-const Task = () => {
+interface ITaskItem {
+ task: ITask;
+ handleRemoveTask: (id: string) => void;
+ handleCheckTask: (id: string) => void;
+}
+
+const Task = ({ task, handleRemoveTask, handleCheckTask }: ITaskItem) => {
   return (
    <div className={styles.task}>
-    <Circle className={styles.circle} size={24}/>
-    <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
-    <Trash size={24}/>
+    {
+      task.check === false ? <button onClick={() => handleCheckTask(task.id)} className={styles.circle}></button>
+      : <button onClick={() => handleCheckTask(task.id)} className={styles.circleChecked}>
+       <Check />
+      </button>
+    }
+    <p className={task.check === true ? styles.textChecked : styles.textUnchecked}>
+     {task.content}
+    </p>
+    
+    <button onClick={() => handleRemoveTask(task.id)} className={styles.buttonRemove}>
+     <Trash size={24}/>
+    </button>
    </div>
   );
 }

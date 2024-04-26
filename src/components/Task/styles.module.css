@@ -13,4 +13,53 @@
 .circle {
  margin-right: 0.5rem;
  color: var(--blue-500);
+ width: 1.5rem;
+ height: 1.5rem;
+ border: 2px solid var(--blue-500);
+ border-radius: 50%;
+ background: transparent;
+}
+
+.circle:hover {
+ background: var(--blue-700);
+ opacity: 0.7;
+}
+
+.circleChecked {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin-right: 0.5rem;
+ width: 1.5rem;
+ height: 1.5rem;
+ border: 2px solid var(--purple-700);
+ border-radius: 50%;
+ background: var(--purple-700);
+ transition: 0.2s;
+}
+
+.circleChecked:hover {
+ background: var(--purple-500);
+ border: 2px solid var(--purple-500);
+}
+
+.circleChecked svg{ 
+ color: var(--gray-200);
+}
+
+.buttonRemove {
+ background: transparent;
+ font-size: 0;
+ border: 0;
+ color: var(--gray-300);
+ cursor: pointer;
+ transition: 0.2s;
+}
+
+.buttonRemove:hover {
+ color: var(--red-500);
+}
+
+.textChecked {
+ text-decoration: line-through;
 }

@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from './styles.module.css';
 
 import logo from '../../assets/logo.svg';
 import { PlusCircle } from '@phosphor-icons/react';
 
-const Header = () => {
+interface IHeader {
+ handleCreateNewTask: (content: string) => void;
+}
+
+const Header = ({ handleCreateNewTask }: IHeader) => {
+  const [text, setText] = useState<string>('');
   return (
    <div>
     <header className={styles.header}>
@@ -16,10 +21,12 @@ const Header = () => {
      <input 
       className={styles.todoText} 
       type="text"
-      placeholder='Adicione uma nova tarefa' 
+      placeholder='Adicione uma nova tarefa'
+      value={text}
+      onChange={(e) => setText(e.target.value)} 
      />
 
-     <button className={styles.todoButton}>
+     <button onClick={() => handleCreateNewTask(text)} className={styles.todoButton}>
       Criar
       <PlusCircle size={20}/>
      </button>
